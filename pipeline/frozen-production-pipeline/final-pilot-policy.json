@@ -1,0 +1,53 @@
+{
+  "retrieval": {
+    "policy": "fasttext_or",
+    "relevance_threshold": 0.4,
+    "recoverability_threshold": 0.3,
+    "rule": "relevance_score >= 0.4 OR recoverability_score >= 0.3",
+    "heuristic_required": false,
+    "heuristic_only_primary_eligible": false
+  },
+  "semantic_judging": {
+    "first_judge": "Qwen/Qwen3-32B",
+    "first_judge_required_decision": "accept",
+    "independent_judge": "mistralai/Mistral-Small-24B-Instruct-2501",
+    "independent_judge_required_decision": "useful",
+    "automatic_recall_pass_enabled": false,
+    "recall_only_destination": "quarantine"
+  },
+  "risk_policy": {
+    "hard_reject": [
+      "weapon_instruction",
+      "dangerous_exercise",
+      "unsupported_safety_claim",
+      "software_only",
+      "doubtful_reliability"
+    ],
+    "medical_or_veterinary": "quarantine",
+    "pure_marketing": "reject_when_no_independent_transferable_knowledge"
+  },
+  "categorization": {
+    "method": "deterministic_from_grounded_selected_segments",
+    "gem_max_semantic_noise": 0.2,
+    "hidden_gem_min_semantic_noise": 0.3,
+    "hidden_gem_max_semantic_noise": 0.7,
+    "minimum_hidden_gem_useful_tokens": 64,
+    "boundary_0.2_to_0.3": "uncertain",
+    "above_0.7": "uncertain_or_reject"
+  },
+  "postprocessing": {
+    "piqa_ngram_decontamination": true,
+    "piqa_ngram": 8,
+    "exact_deduplication": true,
+    "banded_simhash_near_deduplication": true,
+    "global_cross_class_deduplication": true
+  },
+  "evidence": {
+    "qwen_first_pass_unweighted_mistral_confirmation": 0.4421,
+    "qwen_first_pass_weighted_mistral_confirmation": 0.3902,
+    "qwen_gem_candidate_confirmation": 0.6397,
+    "qwen_hidden_gem_candidate_confirmation": 0.3085,
+    "qwen_recall_only_confirmation": 0.0576
+  },
+  "status": "frozen_for_large_source_pilot_not_final_human_ground_truth"
+}

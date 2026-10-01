@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fineweb-gems"
+version = "0.1.0"
+description = "Streaming FineWeb selection, PIQA decontamination, and gem mining"
+requires-python = ">=3.10"
+dependencies = ["datasets>=3.0,<5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+fineweb-gems = "fineweb_gems.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+

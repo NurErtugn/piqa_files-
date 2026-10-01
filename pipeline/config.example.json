@@ -1,0 +1,20 @@
+{
+  "dataset": "HuggingFaceFW/fineweb",
+  "dataset_config": "sample-10BT",
+  "dataset_revision": "v1.4.0",
+  "split": "train",
+  "shuffle_buffer": 10000,
+  "seed": 42,
+  "min_clean_words": 80,
+  "max_clean_words": 6000,
+  "candidate_floor": 0.18,
+  "near_duplicate_hamming": 3,
+  "piqa_ngram": 8,
+  "piqa_overlap_threshold": 0.5,
+  "min_useful_tokens": 80,
+  "gem_max_noise": 0.20,
+  "hidden_gem_min_noise": 0.30,
+  "hidden_gem_max_noise": 0.70,
+  "target_per_class": 100000
+}
+

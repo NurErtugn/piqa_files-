@@ -1,0 +1,32 @@
+# Generated data and model artifacts
+*.jsonl
+*.arrow
+*.parquet
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.core
+core_*
+hf-cache/
+huggingface/
+outputs/
+work/
+logs/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.out
+*.err
+
+# Local configuration and credentials
+config.json
+.env
+.env.*
+*.pem
+*.key
+*token*
+*secret*
+
+# macOS
+.DS_Store
